@@ -18,7 +18,7 @@ public class PlayList {
         String []tmp= directory.list(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
-                if(name.endsWith(".mp3")){
+                if(name.endsWith(".wav")){
                     return true;
                 }else{
                     return false;
@@ -29,11 +29,14 @@ public class PlayList {
             playlist.add(tmp[i]);
         }
     }
+    public LinkedList<String> getList(){
+        return playlist;
+    }
     public String getNext(){
         num++;
         return directoryName+playlist.get(num);
     }
-    public String getPrew(){
+    public String getPrev(){
         num--;
         return directoryName+playlist.get(num);
     }
